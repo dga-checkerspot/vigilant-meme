@@ -20,7 +20,7 @@ process pairs {
 	"""
 	gunzip "${pair_id}_R1_001.fastq.gz"
 	gunzip "${pair_id}_R2_001.fastq.gz"
-	bbnorm.sh in="${pair_id}_R1_001.fastq" in2="${pair_id}_R2_001.fastq" outlow=low.fq outmid=mid.fq outhigh=high.fq passes=1 lowbindepth=6 highbindepth=60 -Xmx5g
+	bbnorm.sh in="${pair_id}_R1_001.fastq" in2="${pair_id}_R2_001.fastq" outlow=low.fq outmid=mid.fq outhigh=high.fq passes=1 lowbindepth=6 highbindepth=60 -Xmx3g
 	
 	"""
 
