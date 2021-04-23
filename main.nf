@@ -36,7 +36,7 @@ process pairInt {
 
 	output:
 	tuple val(pair_id), "R1reads.fastq" into reads_ch
-	tuple val(pair_id), "R2reads.fastq" into reads_ch
+	tuple val(pair_id), "R2reads.fastq" into reads_ch2
 
 	"""
 	chmod 744 $pairInt
