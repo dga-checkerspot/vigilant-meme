@@ -32,7 +32,7 @@ process pairInt {
 
 	input:
 	path 'pairInt' from pairInt
-	tuple val(pair_id), path(mid.fq) from norm_ch
+	tuple val(pair_id), path('mid.fq') from norm_ch
 
 	output:
 	tuple val(pair_id), "R1reads.fastq" into reads_ch
