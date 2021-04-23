@@ -1,6 +1,8 @@
 #!/usr/bin/env nextflow
 
 params.reads='s3://algaetranscriptomics/CHK17*_R{1,2}_001.fastq.gz'
+pairInt='s3://transcriptomepipeline/PairInterleaves.sh'
+
 
 Channel
 	.fromFilePairs(params.reads)
@@ -23,3 +25,22 @@ process pairs {
 	"""
 
 }
+
+
+
+process pairInt {
+
+	input:
+	path 'pairInt' from pairInt
+	tuple val(pair_id), path(mid.fq) from norm_ch
+
+	output:
+	tuple val(pair_id), "R*reads.fastq" into reads_ch 
+
+	"""
+	chmod 744 $pairInt
+	./$pairInt < $Intpair R1reads.fastq R2reads.fastq
+	"""
+
+}
+
