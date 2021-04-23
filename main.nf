@@ -35,7 +35,8 @@ process pairInt {
 	tuple val(pair_id), path(mid.fq) from norm_ch
 
 	output:
-	tuple val(pair_id), "R*reads.fastq" into reads_ch 
+	tuple val(pair_id), "R1reads.fastq" into reads_ch
+	tuple val(pair_id), "R2reads.fastq" into reads_ch
 
 	"""
 	chmod 744 $pairInt
