@@ -32,7 +32,7 @@ process pairInt {
 
 	input:
 	path 'pairInt' from pairInt
-	tuple val(pair_id), path('mid.fq') from norm_ch
+	tuple val(pair_id), path('midfq') from norm_ch
 
 	output:
 	tuple val(pair_id), "R1reads.fastq" into reads_ch
@@ -40,7 +40,7 @@ process pairInt {
 
 	"""
 	chmod 744 $pairInt
-	./$pairInt < $mid.fq R1reads.fastq R2reads.fastq
+	./$pairInt < $midfq R1reads.fastq R2reads.fastq
 	"""
 
 }
