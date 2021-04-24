@@ -40,7 +40,7 @@ process pairInt {
 
 	"""
 	chmod 744 $pairInt
-	./$pairInt < $Intpair R1reads.fastq R2reads.fastq
+	./$pairInt < $mid.fq R1reads.fastq R2reads.fastq
 	"""
 
 }
