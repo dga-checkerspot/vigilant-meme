@@ -1,6 +1,6 @@
 #!/usr/bin/env nextflow
 
-params.reads='s3://algaetranscriptomics/CHK17*_R{1,2}_001.fastq.gz'
+params.reads='s3://algaetranscriptomics/CHK17-d1*L001_R{1,2}_001.fastq.gz'
 pairInt='s3://transcriptomepipeline/PairInterleaves.sh'
 
 
