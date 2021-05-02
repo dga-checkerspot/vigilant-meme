@@ -10,6 +10,9 @@ Channel
 	.set { read_pairs_ch }
 
 process pairs {
+
+	memory '8G'
+	
 	input:
 	tuple val(pair_id), path(reads) from read_pairs_ch
 	
@@ -29,6 +32,8 @@ process pairs {
 
 process pairInt {
 
+	memory '1G'
+
 	input:
 	path 'pairInt' from pairInt
 	tuple val(pair_id), path('midfq') from norm_ch
@@ -43,4 +48,28 @@ process pairInt {
 	"""
 
 }
+
+
+reads_ch .mix(reads_ch2)
+
+process join {
+
+	memory '4G'
+
+	input:
+	path 'seq' from reads_ch
+	
+	output:
+	file 'R1reads.fa' into R1reads
+	file 'R2reads.fa' into R2reads
+	
+	"""
+	cat *R1* > R1reads.fa
+	cat *R2* > R2reads.fa
+	"""
+}
+
+
+
+
 
