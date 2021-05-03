@@ -50,7 +50,11 @@ process pairInt {
 }
 
 
-reads_ch .mix(reads_ch2)
+
+
+Channel
+	.from(reads_ch .mix(reads_ch2))
+	.set { reads_ch }
 
 process join {
 
