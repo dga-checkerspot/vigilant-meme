@@ -52,9 +52,11 @@ process pairInt {
 
 
 
+
 Channel
-	.from(reads_ch .mix(reads_ch2))
-	.set { reads_ch }
+    .from(reads_ch, reads_ch2)
+    .flatten()
+    .set{ reads_ch }
 
 process join {
 
