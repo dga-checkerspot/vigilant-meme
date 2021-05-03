@@ -259,7 +259,7 @@ process bbnorm {
 }
 
 
-process pairInt {
+process pairInt2 {
 
 	memory '1G'
 
