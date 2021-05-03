@@ -50,20 +50,13 @@ process pairInt {
 }
 
 
-
-
-
-Channel
-    .from(reads_ch, reads_ch2)
-    .flatten()
-    .set{ reads_ch }
-
 process join {
 
 	memory '4G'
 
 	input:
-	path 'seq' from reads_ch
+	path 'seq1' from reads_ch
+	path 'seq2' from reads_ch
 	
 	output:
 	file 'R1reads.fa' into R1reads
