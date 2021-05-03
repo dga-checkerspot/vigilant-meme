@@ -56,7 +56,7 @@ process join {
 
 	input:
 	path 'seq1' from reads_ch
-	path 'seq2' from reads_ch
+	path 'seq2' from reads_ch2
 	
 	output:
 	file 'R1reads.fa' into R1reads
