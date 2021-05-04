@@ -313,6 +313,7 @@ process SpadeAssemble {
 
         """
         rnaspades.py  --pe1-1 $R1Norm --pe1-2 $R2Norm  -o spades_output
+	cp ./spades_output/hard_filtered_transcripts.fasta .
         """
 }
 
