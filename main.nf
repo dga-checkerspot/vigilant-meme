@@ -78,7 +78,7 @@ process join2 {
 	memory '4G'
 
 	input:
-	tuple val(pair_id), path(fileList) from reads_ch.collect()
+	tuple val(pair_id), path(fileList) from reads_ch2.collect()
 	
 	output:
 	file 'R2reads.fa' into R2reads
