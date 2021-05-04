@@ -62,7 +62,7 @@ process join1 {
 	memory '4G'
 
 	input:
-	path fileList from reads_ch.collect()
+	val fileList from reads_ch.collect()
 	
 	output:
 	file 'R1reads.fa' into R1reads
@@ -78,7 +78,7 @@ process join2 {
 	memory '4G'
 
 	input:
-	path fileList from reads_ch2.collect()
+	val fileList from reads_ch2.collect()
 	
 	output:
 	file 'R2reads.fa' into R2reads
