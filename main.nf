@@ -62,13 +62,13 @@ process join1 {
 	memory '4G'
 
 	input:
-	val fileList from reads_ch.collect()
+	tuple val(pair_id), path(fileList) from reads_ch.collect()
 	
 	output:
 	file 'R1reads.fa' into R1reads
 	
 	"""
-	cat `ls R1*` > R1reads.fa
+	cat `ls * ` > R1reads.fa
 	"""
 }
 
@@ -78,13 +78,13 @@ process join2 {
 	memory '4G'
 
 	input:
-	val fileList from reads_ch2.collect()
+	tuple val(pair_id), path(fileList) from reads_ch.collect()
 	
 	output:
 	file 'R2reads.fa' into R2reads
 	
 	"""
-	cat `ls R2*` > R2reads.fa
+	cat `ls *` > R2reads.fa
 	"""
 }
 
