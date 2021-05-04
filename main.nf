@@ -308,8 +308,8 @@ process SpadeAssemble {
         path R1Norm from P1NormSpades
 	path R2Norm from P2NormSpades
 
-        //output:
-        //file 'hard_filtered_transcripts.fasta' into Spades
+        output:
+        file 'hard_filtered_transcripts.fasta' into Spades
 
         """
         rnaspades.py  --pe1-1 $R1Norm --pe1-2 $R2Norm  -o spades_output
