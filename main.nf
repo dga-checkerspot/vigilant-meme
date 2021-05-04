@@ -91,7 +91,7 @@ process join2 {
 
 process minimapS31 {
 	
-	memory '8G'
+	memory '16G'
 	
 	input:
 	path fastq from R1reads
@@ -148,7 +148,7 @@ process cutadapt1 {
 
 process minimapS32 {
 
-	memory '8G'
+	memory '16G'
 	
 	input:
 	path fastq from R2reads
