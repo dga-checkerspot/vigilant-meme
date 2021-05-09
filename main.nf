@@ -1,6 +1,6 @@
 #!/usr/bin/env nextflow
 
-params.reads='s3://algae.chk15.transcriptome/CHK15*_R{1,2}_001.fastq.gz'
+params.reads='s3://algae.chk14.transcriptome/CHK14*_R{1,2}_001.fastq.gz'
 pairInt='s3://transcriptomepipeline/PairInterleaves.sh'
 sequences2='s3://transcriptomepipeline/ContaminantsForRemove.fasta'
 sequences22='s3://transcriptomepipeline/ContaminantsForRemove.fasta'
@@ -37,7 +37,7 @@ process pairs {
 
 process pairInt {
 
-	memory '1G'
+	memory '4G'
 
 	input:
 	path 'pairInt' from pairInt
